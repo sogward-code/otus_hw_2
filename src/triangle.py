@@ -4,6 +4,8 @@ import math
 
 class Triangle(Figure):
     def __init__(self, a, b, c):
+        if a <= 0 or b <= 0 or c <= 0:
+            raise ValueError("Стороны должны быть положительными")
         if not (a + b > c and a + c > b and b + c > a):
             raise ValueError("Невозможно создать треугольник")
         self.a = a

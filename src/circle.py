@@ -4,6 +4,8 @@ import math
 
 class Circle(Figure):
     def __init__(self, radius):
+        if radius <= 0:
+            raise ValueError("Радиус должен быть положительным")
         self.radius = radius
 
     def get_area(self):
